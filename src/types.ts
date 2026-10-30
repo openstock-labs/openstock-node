@@ -170,7 +170,6 @@ export interface ListCustomersParams extends PageParams {
 
 export interface BalanceChangeParams {
   email: string
-  /** Positive amount. */
   amount: number
   reason?: string
   metadata?: Metadata
