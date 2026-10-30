@@ -1,0 +1,29 @@
+{
+  "name": "@openstock/node",
+  "version": "0.1.0",
+  "description": "Official Node.js SDK for the OpenStock API: checkout sessions, crypto withdrawals, customer balances and webhook verification.",
+  "keywords": ["openstock", "digital-products", "checkout", "license-keys", "webhooks", "ecommerce", "crypto-payments"],
+  "homepage": "https://docs.openstock.dev",
+  "repository": { "type": "git", "url": "git+https://github.com/openstock-labs/openstock-node.git" },
+  "bugs": "https://github.com/openstock-labs/openstock-node/issues",
+  "license": "MIT",
+  "author": "OpenStock <support@openstock.dev> (https://openstock.dev)",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": { ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" } },
+  "files": ["dist"],
+  "engines": { "node": ">=18.17" },
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test test/*.test.ts",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "tsx": "^4.23.0",
+    "typescript": "^5.9.0"
+  }
+}
